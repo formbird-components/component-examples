@@ -1,0 +1,17 @@
+{
+  "systemHeader": {
+      "templateId": "74746c80-8378-11e6-99b1-71ee944cf59f",
+      "systemType": "template",
+      "summaryName": "jd-text-box test"
+  },
+  "name": "jd-text-box test",
+  "documentId": "4700d005-730b-4b5b-a2c5-cfb6e628bac4",
+  "components": [
+      {
+          "label": "Test jd-text-box",
+          "componentName": "jd-text-box",
+          "name": "testJdTextBox",
+          "fullWidth": true
+      }
+  ]
+}

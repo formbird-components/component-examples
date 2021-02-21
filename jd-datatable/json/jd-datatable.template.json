@@ -1,0 +1,17 @@
+{
+  "systemHeader": {
+      "templateId": "74746c80-8378-11e6-99b1-71ee944cf59f",
+      "systemType": "template",
+      "summaryName": "jd-datatable test"
+  },
+  "name": "jd-datatable test",
+  "documentId": "06ee976d-4e32-46ee-bf62-29b2541100f2",
+  "components": [
+      {
+          "label": "Test jd-datatable",
+          "componentName": "jd-datatable",
+          "name": "testJdDatatable",
+          "fullWidth": true
+      }
+  ]
+}

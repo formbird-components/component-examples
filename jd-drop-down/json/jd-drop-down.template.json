@@ -1,0 +1,17 @@
+{
+  "systemHeader": {
+      "templateId": "74746c80-8378-11e6-99b1-71ee944cf59f",
+      "systemType": "template",
+      "summaryName": "jd-drop-down test"
+  },
+  "name": "jd-drop-down test",
+  "documentId": "92a4bae4-58b6-4dcd-b0e1-e0e96d8e3b9a",
+  "components": [
+      {
+          "label": "Test jd-drop-down",
+          "componentName": "jd-drop-down",
+          "name": "testJdDropDown",
+          "fullWidth": true
+      }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "systemHeader": {
+      "templateId": "74746c80-8378-11e6-99b1-71ee944cf59f",
+      "systemType": "template",
+      "summaryName": "jd-chart test"
+  },
+  "name": "jd-chart test",
+  "documentId": "78bdce46-90c7-46b6-8014-99db8df7f4c7",
+  "components": [
+      {
+          "label": "Test jd-chart",
+          "componentName": "jd-chart",
+          "name": "testJdChart",
+          "fullWidth": true
+      }
+  ]
+}

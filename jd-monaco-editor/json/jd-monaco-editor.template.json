@@ -1,0 +1,17 @@
+{
+  "systemHeader": {
+      "templateId": "74746c80-8378-11e6-99b1-71ee944cf59f",
+      "systemType": "template",
+      "summaryName": "jd-monaco-editor test"
+  },
+  "name": "jd-monaco-editor test",
+  "documentId": "c4fd1712-275c-43bb-8984-a643a611321a",
+  "components": [
+      {
+          "label": "Test jd-monaco-editor",
+          "componentName": "jd-monaco-editor",
+          "name": "testJdMonacoEditor",
+          "fullWidth": true
+      }
+  ]
+}
