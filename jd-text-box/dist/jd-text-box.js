@@ -18400,14 +18400,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
 /* harmony import */ var _utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/CustomElementWrapper */ "./src/utils/CustomElementWrapper.tsx");
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services */ "./src/services/index.ts");
+
 
 
 
 const JdTextBoxComponent = ({ document, fieldValue, template, fieldName, formParameters, key, responsiveLayouts, message, componentDefinition }) => {
     const [value, setValue] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
+    function onChange(event) {
+        setValue(event.target.value);
+        console.log('onChange', event.target.value);
+        _services__WEBPACK_IMPORTED_MODULE_2__.changedDocumentService.valueChanged({
+            document,
+            fieldName,
+            fieldValue,
+            formParameters,
+            template,
+            componentDefinition,
+            key
+        }, event.target.value);
+    }
+    ;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        console.log(fieldValue);
         if (fieldValue) {
             setValue(fieldValue);
         }
@@ -18415,7 +18432,7 @@ const JdTextBoxComponent = ({ document, fieldValue, template, fieldName, formPar
             setValue(componentDefinition.defaultValue);
         }
     }, []);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__.default, { required: componentDefinition.mandatory, id: componentDefinition.name, label: componentDefinition.label, value: value }));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__.default, { onChange: onChange, required: componentDefinition.mandatory, id: componentDefinition.name, label: componentDefinition.label, value: value }));
 };
 // register the component as a custom element so it can be shown in formbird
 (0,_utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__.convertToCustomElement)('jd-text-box', JdTextBoxComponent);
@@ -18434,6 +18451,25 @@ const JdTextBoxComponent = ({ document, fieldValue, template, fieldName, formPar
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_JdTextBox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/JdTextBox */ "./src/components/JdTextBox.tsx");
 
+
+
+/***/ }),
+
+/***/ "./src/services/index.ts":
+/*!*******************************!*\
+  !*** ./src/services/index.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "changedDocumentService": () => /* binding */ changedDocumentService,
+/* harmony export */   "searchService": () => /* binding */ searchService
+/* harmony export */ });
+const anyWindow = window;
+const changedDocumentService = (anyWindow.FormbirdServiceInjector).get('ChangedDocumentService');
+const searchService = (anyWindow.FormbirdServiceInjector).get('SearchService');
 
 
 /***/ }),

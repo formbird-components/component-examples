@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {FormComponent} from '@formbird/types';
 import TextField from '@material-ui/core/TextField';
 import { convertToCustomElement } from '../utils/CustomElementWrapper';
+import { changedDocumentService } from '../services';
 
 const JdTextBoxComponent = ({
   document,
@@ -17,6 +18,20 @@ const JdTextBoxComponent = ({
 
   const [value, setValue] = useState();
 
+  function onChange(event) {
+    setValue(event.target.value);
+  
+    changedDocumentService.valueChanged({
+      document,
+      fieldName,
+      fieldValue,
+      formParameters,
+      template,
+      componentDefinition,
+      key
+    }, event.target.value);
+  };
+
   useEffect(() => {
     if (fieldValue) {
       setValue(fieldValue);
@@ -26,7 +41,7 @@ const JdTextBoxComponent = ({
   }, []);
 
   return (
-    <TextField onChange={() => {}} required={componentDefinition.mandatory} id={componentDefinition.name} label={componentDefinition.label} value={value} />
+    <TextField onChange={onChange} required={componentDefinition.mandatory} id={componentDefinition.name} label={componentDefinition.label} value={value} />
   );
 };
 
