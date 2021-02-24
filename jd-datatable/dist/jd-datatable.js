@@ -9859,14 +9859,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/CustomElementWrapper */ "./src/utils/CustomElementWrapper.tsx");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
-/* harmony import */ var _material_ui_core_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Table */ "./node_modules/@material-ui/core/esm/Table/Table.js");
-/* harmony import */ var _material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/TableBody */ "./node_modules/@material-ui/core/esm/TableBody/TableBody.js");
-/* harmony import */ var _material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/TableCell */ "./node_modules/@material-ui/core/esm/TableCell/TableCell.js");
-/* harmony import */ var _material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/TableContainer */ "./node_modules/@material-ui/core/esm/TableContainer/TableContainer.js");
-/* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/TableHead */ "./node_modules/@material-ui/core/esm/TableHead/TableHead.js");
-/* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/TableRow */ "./node_modules/@material-ui/core/esm/TableRow/TableRow.js");
-/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core_Table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Table */ "./node_modules/@material-ui/core/esm/Table/Table.js");
+/* harmony import */ var _material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/TableBody */ "./node_modules/@material-ui/core/esm/TableBody/TableBody.js");
+/* harmony import */ var _material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/TableCell */ "./node_modules/@material-ui/core/esm/TableCell/TableCell.js");
+/* harmony import */ var _material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/TableContainer */ "./node_modules/@material-ui/core/esm/TableContainer/TableContainer.js");
+/* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/TableHead */ "./node_modules/@material-ui/core/esm/TableHead/TableHead.js");
+/* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/TableRow */ "./node_modules/@material-ui/core/esm/TableRow/TableRow.js");
+/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+/* harmony import */ var _utils_WithGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/WithGrid */ "./src/utils/WithGrid.tsx");
 
 
 
@@ -9877,23 +9878,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const JdDatatable = ({ document, fieldValue, template, fieldName, formParameters, key, responsiveLayouts, message, componentDefinition }) => {
-    const useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default)({
+
+const JdDatatable = ({ document, fieldValue, template, fieldName, formParameters, key, responsiveLayouts, message, componentDefinition, columns, loading, rows }) => {
+    const useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__.default)({
         table: {
             minWidth: 650,
         },
     });
     const [value, setValue] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
-    function createData(name, calories, fat, carbs, protein) {
-        return { name, calories, fat, carbs, protein };
-    }
-    const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-        createData('Eclair', 262, 16.0, 24, 6.0),
-        createData('Cupcake', 305, 3.7, 67, 4.3),
-        createData('Gingerbread', 356, 16.0, 49, 3.9),
-    ];
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         if (fieldValue) {
             setValue(fieldValue);
@@ -9901,27 +9893,21 @@ const JdDatatable = ({ document, fieldValue, template, fieldName, formParameters
         else if (componentDefinition.defaultValue) {
             setValue(componentDefinition.defaultValue);
         }
-    }, []);
+        console.log(rows);
+        console.log(columns);
+        console.log(loading);
+    }, [columns, loading, rows]);
     const classes = useStyles();
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_3__.default, { component: _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_4__.default },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_5__.default, { className: classes.table, "aria-label": "simple table" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6__.default, null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7__.default, null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, null, "Dessert (100g serving)"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, "Calories"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, "Fat\u00A0(g)"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, "Carbs\u00A0(g)"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, "Protein\u00A0(g)"))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_9__.default, null, rows.map((row) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7__.default, { key: row.name },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { component: "th", scope: "row" }, row.name),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, row.calories),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, row.fat),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, row.carbs),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_8__.default, { align: "right" }, row.protein))))))));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_4__.default, { component: _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_5__.default },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_6__.default, { className: classes.table, "aria-label": "simple table" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_7__.default, null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_8__.default, null, columns && columns.map(c => react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_9__.default, null, c.displayName)))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_10__.default, null, rows.map((row) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_8__.default, { key: row.name }, columns && columns.map(c => react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_9__.default, { component: "th", scope: "row" }, row[c.field])))))))));
 };
+const wrapped = (0,_utils_WithGrid__WEBPACK_IMPORTED_MODULE_2__.default)(JdDatatable);
 // register the component as a custom element so it can be shown in formbird
-(0,_utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__.convertToCustomElement)('jd-datatable', JdDatatable);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (JdDatatable);
+(0,_utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__.convertToCustomElement)('jd-datatable', wrapped);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (wrapped);
 
 
 /***/ }),
@@ -9936,6 +9922,25 @@ const JdDatatable = ({ document, fieldValue, template, fieldName, formParameters
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_JdDatatable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/JdDatatable */ "./src/components/JdDatatable.tsx");
 
+
+
+/***/ }),
+
+/***/ "./src/services/index.ts":
+/*!*******************************!*\
+  !*** ./src/services/index.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "changedDocumentService": () => /* binding */ changedDocumentService,
+/* harmony export */   "searchService": () => /* binding */ searchService
+/* harmony export */ });
+const anyWindow = window;
+const changedDocumentService = (anyWindow.FormbirdServiceInjector).get('ChangedDocumentService');
+const searchService = (anyWindow.FormbirdServiceInjector).get('SearchService');
 
 
 /***/ }),
@@ -9988,6 +9993,55 @@ const convertToCustomElement = (name, Component) => {
     }
     customElements.define(name, FtWrapper);
 };
+
+
+/***/ }),
+
+/***/ "./src/utils/WithGrid.tsx":
+/*!********************************!*\
+  !*** ./src/utils/WithGrid.tsx ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services */ "./src/services/index.ts");
+
+
+const WithGrid = (OriginalComponent) => {
+    const NewComponent = (props) => {
+        const { componentDefinition } = props;
+        const [columns, setColumns] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(componentDefinition.gridColunns);
+        const [rows, setRows] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+        const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+        (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+            setColumns(componentDefinition.gridColumns);
+            const options = {
+                filter: componentDefinition.filter,
+                page: 0,
+                size: 50
+            };
+            doFetch(options);
+        }, [props]);
+        const doFetch = (options) => {
+            _services__WEBPACK_IMPORTED_MODULE_1__.searchService.search(options).then(result => {
+                setLoading(true);
+                const data = result.data.hits.hits.map((esDoc, index) => (Object.assign({ id: index }, esDoc._source)));
+                setRows(data);
+            }).catch(err => console.log(err)).finally(() => {
+                setLoading(false);
+            });
+        };
+        return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(OriginalComponent, Object.assign({ columns: columns }, Object.assign({ rows, columns, loading, doFetch }, props)));
+    };
+    return NewComponent;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WithGrid);
 
 
 /***/ }),
