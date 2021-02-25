@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {FormComponent} from '@formbird/types';
 import { convertToCustomElement } from '../utils/CustomElementWrapper';
+import { changedDocumentService } from '../services';
 import Editor from "@monaco-editor/react";
 
 const JdMonacoEditor = ({
@@ -25,12 +26,18 @@ const JdMonacoEditor = ({
     }
   }, []);
 
+  function handleEditorChange(textValue, event) { 
+    changedDocumentService.valueChanged(
+      { document, fieldName, textValue, formParameters, template, componentDefinition, key }, 
+    textValue); 
+  }
+
   return (
     <Editor
      height="90vh"
      onChange={() => {}}
      defaultLanguage="javascript"
-     defaultValue="// some comment"
+     value={value}
    />
   );
 };
