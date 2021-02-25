@@ -18407,11 +18407,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const JdTextBoxComponent = ({ document, fieldValue, template, fieldName, formParameters, key, responsiveLayouts, message, componentDefinition }) => {
+const JdTextBox = ({ document, fieldValue, template, fieldName, formParameters, key, responsiveLayouts, message, componentDefinition }) => {
     const [value, setValue] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
     function onChange(event) {
         setValue(event.target.value);
-        console.log('onChange', event.target.value);
         _services__WEBPACK_IMPORTED_MODULE_2__.changedDocumentService.valueChanged({
             document,
             fieldName,
@@ -18424,7 +18423,6 @@ const JdTextBoxComponent = ({ document, fieldValue, template, fieldName, formPar
     }
     ;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        console.log(fieldValue);
         if (fieldValue) {
             setValue(fieldValue);
         }
@@ -18435,8 +18433,8 @@ const JdTextBoxComponent = ({ document, fieldValue, template, fieldName, formPar
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__.default, { onChange: onChange, required: componentDefinition.mandatory, id: componentDefinition.name, label: componentDefinition.label, value: value }));
 };
 // register the component as a custom element so it can be shown in formbird
-(0,_utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__.convertToCustomElement)('jd-text-box', JdTextBoxComponent);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (JdTextBoxComponent);
+(0,_utils_CustomElementWrapper__WEBPACK_IMPORTED_MODULE_1__.convertToCustomElement)('jd-text-box', JdTextBox);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (JdTextBox);
 
 
 /***/ }),

@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { convertToCustomElement } from '../utils/CustomElementWrapper';
 import { changedDocumentService } from '../services';
 
-const JdTextBoxComponent = ({
+const JdTextBox = ({
   document,
   fieldValue,
   template,
@@ -30,7 +30,7 @@ const JdTextBoxComponent = ({
       componentDefinition,
       key
     }, event.target.value);
-  };
+  }
 
   useEffect(() => {
     if (fieldValue) {
@@ -46,6 +46,6 @@ const JdTextBoxComponent = ({
 };
 
 // register the component as a custom element so it can be shown in formbird
-convertToCustomElement('jd-text-box', JdTextBoxComponent);
+convertToCustomElement('jd-text-box', JdTextBox);
 
-export default JdTextBoxComponent;
+export default JdTextBox;
