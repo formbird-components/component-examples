@@ -16,6 +16,7 @@
   "dependencies": {
     "@formbird/types": "~3.3.2-next.21",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "recharts": "^2.0.8"
   }
 }
