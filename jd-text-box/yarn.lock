@@ -948,13 +948,13 @@
     prop-types "^15.7.2"
     react-is "^16.8.0 || ^17.0.0"
 
-"@playwright/test@^0.151.0":
-  version "0.151.1"
-  resolved "https://registry.yarnpkg.com/@playwright/test/-/test-0.151.1.tgz#a0a421830d36426475a249b8d5249d9a313a0ffb"
-  integrity sha512-1VtKn58bq4eIbdL84IlDQsY64FMr/GpiVoANAPIJxSu0bBJqOqZvO23YmkMUsW8C8NL0pHlEuioSJ/uy+prk3g==
+"@playwright/test@^0.191.0":
+  version "0.191.0"
+  resolved "https://registry.yarnpkg.com/@playwright/test/-/test-0.191.0.tgz#a843225ec02fc951b73ceba033e2186dcfc7e96b"
+  integrity sha512-jDxoGDH/O2lggmf/9/6Qhr6wTg0AVsGHoJ2crBb7zUaSlV18TkQhigEeWatE0E74F66CeTnA8O1/cXeLeUYIJA==
   dependencies:
-    folio "=0.3.13"
-    playwright "=1.5.1"
+    folio "=0.3.18"
+    playwright "=1.9.1"
     rimraf "^3.0.2"
 
 "@types/eslint-scope@^3.7.0":
@@ -1615,10 +1615,10 @@ execa@^5.0.0:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
-expect-playwright@^0.2.5:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/expect-playwright/-/expect-playwright-0.2.6.tgz#fb690763ea386c6b88494512119817beb2c61cf1"
-  integrity sha512-zb+0L9ayNPhFm89F0BOQP8yTckETbA33wmWoxcnUY/A0pFsd7e4Tn8YrDsLiMQ7gZX2dD3LQHH9TWSnvEJi8rw==
+expect-playwright@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/expect-playwright/-/expect-playwright-0.3.2.tgz#2b2ebbdb9c57eefcbeed87bbe3af569f85b502e9"
+  integrity sha512-UnHrnrrYL1GHaX/rHkC+X4RwaTzxwgvZ39Wv/q9AMCk/8646vsW58heQQYEaev1yFtWynW5fQFn8IaXGrG8C6w==
 
 expect@^26.4.2:
   version "26.6.2"
@@ -1688,10 +1688,10 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-folio@=0.3.13:
-  version "0.3.13"
-  resolved "https://registry.yarnpkg.com/folio/-/folio-0.3.13.tgz#d2bfd4f7a408337c82bda8335a97e8db591a9b78"
-  integrity sha512-dMvR7UKyaxjCikJ9D476Td9vVH/zn8ZnP+kWY9wcZVPB7ev4UMIZHq8tcPGww22OmWHLQHQ8fkjWm3CmsjSudw==
+folio@=0.3.18:
+  version "0.3.18"
+  resolved "https://registry.yarnpkg.com/folio/-/folio-0.3.18.tgz#8d5d6b6218cf8c8d59e1153606759086b3c8e397"
+  integrity sha512-0VV5f92f6ol5CTiPIe0RgkGqm7F+Kp2fXU7DPY6dOd0Q2Oe7YESQ3Bkrxgc3nubioIvFcoOL7F955ridYQvJuw==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/core" "^7.11.4"
@@ -2340,11 +2340,12 @@ pkg-dir@^5.0.0:
   dependencies:
     find-up "^5.0.0"
 
-playwright@=1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.5.1.tgz#f5333cbfefaf9cb7213b0c9ca8bc9f3f18efcf16"
-  integrity sha512-FYxrQ2TAmvp5ZnBnc6EJHc1Vt3DmXx8xVDq6rxVVG4YVoNKHYMarHI92zGyDlueN2kKCavrhk4Et9w6jJ5XWaA==
+playwright@=1.9.1, playwright@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.9.1.tgz#b4db35f69076b2dc91e347e58d81f2f391d1ed49"
+  integrity sha512-bZXnks4UGJZoqja6TqVEUG0IQ2liqYFcO1R4lT43aO4oDVTQtawEJjS+EqLYsAuniRFWVE87Cemus4fRQbyXMg==
   dependencies:
+    commander "^6.1.0"
     debug "^4.1.1"
     extract-zip "^2.0.1"
     https-proxy-agent "^5.0.0"
@@ -2355,6 +2356,7 @@ playwright@=1.5.1:
     proper-lockfile "^4.1.1"
     proxy-from-env "^1.1.0"
     rimraf "^3.0.2"
+    stack-utils "^2.0.3"
     ws "^7.3.1"
 
 pngjs@^4.0.1:
@@ -2685,7 +2687,7 @@ source-map@~0.7.2:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
 
-stack-utils@^2.0.2:
+stack-utils@^2.0.2, stack-utils@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-2.0.3.tgz#cd5f030126ff116b78ccb3c027fe302713b61277"
   integrity sha512-gL//fkxfWUsIlFL2Tl42Cl6+HFALEaB1FU76I/Fy+oZjRreP7OPMXFlGbxM7NQsI0ZpUfw76sHnv0WNYuTb7Iw==
